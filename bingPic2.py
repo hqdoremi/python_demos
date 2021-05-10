@@ -24,8 +24,7 @@ def download_img():
         image = requests.get(url).content
         if not os.path.exists(bingImgDir):
             os.mkdir(bingImgDir)
-        # with open(bingImgDir + '/bing_' + md5 + '.jpeg', 'wb') as fp:
-        with open(bingImgDir + '/bing_' + str(datetime.now().timestamp()) + '.jpeg', 'wb') as fp:
+        with open(bingImgDir + '/bing_' + md5 + '.jpeg', 'wb') as fp:
             fp.write(image)
     finally:
         driver.quit()
